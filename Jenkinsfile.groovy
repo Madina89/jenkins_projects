@@ -1,6 +1,6 @@
 node{
     stage("Update jenkins"){
-        properties([parameters([string(defaultValue: '63.33.56.132', description: 'Please provide IP', name: 'ENVIR', trim: true)])])
+        properties([parameters([string(defaultValue: '52.214.14.219', description: 'Please provide IP', name: 'ENVIR', trim: true)])])
         sh "echo Parameter added"
     }
     stage("Install git"){
