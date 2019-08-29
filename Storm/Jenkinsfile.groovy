@@ -10,6 +10,10 @@ node{
         sh "ssh  ec2-user@${ENVIR} sudo  rm -rf /home/ec2-user/stormpath-flask-sample"
     }
     stage("Pull Repo"){
+        sh "scp script.sh ec2-user@${ENVIR}:/home/ec2-user"
+        sh "ssh ec2-user@${ENVIR} bash script.sh"
+    }
+    stage("Pull Repo"){
         sh "ssh  ec2-user@${ENVIR} git clone https://github.com/Madina89/stormpath-flask-sample.git 2> /dev/null"
     }
     stage("Install Requirements"){
